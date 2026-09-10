@@ -6,6 +6,20 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import '/src/sass/style.scss';
 
+const burgerEl = document.querySelector('.burger');
+const closeEl = document.querySelector('.header__menu-close');
+const menuEl = document.querySelector('.header__menu');
+
+burgerEl.addEventListener('click', () => {
+    menuEl.classList.add('header__menu_active');
+    document.body.style.overflow = 'hidden';
+});
+
+closeEl.addEventListener('click', () => {
+    menuEl.classList.remove('header__menu_active');
+    document.body.style.overflow = '';
+});
+
 try {
     new Swiper('.works__slider', {
         slidesPerView: 1,
